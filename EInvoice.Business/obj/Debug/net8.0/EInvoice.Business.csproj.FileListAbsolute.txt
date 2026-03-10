@@ -1,0 +1,17 @@
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\bin\Debug\net8.0\EInvoice.Business.deps.json
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\bin\Debug\net8.0\EInvoice.Business.dll
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\bin\Debug\net8.0\EInvoice.Business.pdb
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\bin\Debug\net8.0\EInvoice.DAL.dll
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\bin\Debug\net8.0\EInvoice.Domain.dll
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\bin\Debug\net8.0\EInvoice.DAL.pdb
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\bin\Debug\net8.0\EInvoice.Domain.pdb
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.C1189CFD.Up2Date
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.dll
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\refint\EInvoice.Business.dll
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.pdb
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\ref\EInvoice.Business.dll

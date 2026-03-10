@@ -1,0 +1,155 @@
+[
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/Good",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "goodDto",
+        "Type": "EInvoice.Business.DTOs.GoodDTO.GoodCreateRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/Good/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "UpdateAsync",
+    "RelativePath": "api/Good/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "goodDto",
+        "Type": "EInvoice.Business.DTOs.GoodDTO.GoodUpdateRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "ActiceAsync",
+    "RelativePath": "api/Good/activate/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Good/admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/Good/admin/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "DeActiveAsync",
+    "RelativePath": "api/Good/deactivate/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "GetAllPublicAsync",
+    "RelativePath": "api/Good/moderator",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "RecoverAsync",
+    "RelativePath": "api/Good/recover/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "SoftDeleteAsync",
+    "RelativePath": "api/Good/softdelete/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
