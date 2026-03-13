@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EInvoice.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bee91e1c8dc255f35815e4be5fa746d44c1e775")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b76ea5296821a69b3d8a8025fe4378dabde13bb5")]
 [assembly: System.Reflection.AssemblyProductAttribute("EInvoice.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EInvoice.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

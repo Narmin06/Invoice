@@ -264,7 +264,14 @@
                   "InvoiceRequisites.InvoiceDate",
                   "InvoiceRequisites.InvoiceNumber",
                   "InvoiceRequisites.InvoicePurpose",
-                  "InvoiceRequisites.PaymentConditions"
+                  "InvoiceRequisites.PaymentConditions",
+                  "Recipient.Address.City",
+                  "Recipient.Address.Country",
+                  "Recipient.Name",
+                  "Recipient.Voen",
+                  "Sender.Address.City",
+                  "Sender.Address.Country",
+                  "Sender.Name"
                 ],
                 "type": "object",
                 "properties": {
@@ -292,6 +299,27 @@
                   "Importer.IsImporterDifferentFromRecipient": {
                     "type": "boolean"
                   },
+                  "Recipient.Voen": {
+                    "type": "string"
+                  },
+                  "Recipient.Name": {
+                    "type": "string"
+                  },
+                  "Recipient.Address.StreetAndNumber": {
+                    "type": "string"
+                  },
+                  "Recipient.Address.PostalCode": {
+                    "type": "string"
+                  },
+                  "Recipient.Address.City": {
+                    "type": "string"
+                  },
+                  "Recipient.Address.Country": {
+                    "type": "string"
+                  },
+                  "Recipient.IsImporterDifferentFromRecipient": {
+                    "type": "boolean"
+                  },
                   "Exporter.Voen": {
                     "type": "string"
                   },
@@ -311,6 +339,27 @@
                     "type": "string"
                   },
                   "Exporter.IsExporterDifferentFromSender": {
+                    "type": "boolean"
+                  },
+                  "Sender.Voen": {
+                    "type": "string"
+                  },
+                  "Sender.Name": {
+                    "type": "string"
+                  },
+                  "Sender.Address.StreetAndNumber": {
+                    "type": "string"
+                  },
+                  "Sender.Address.PostalCode": {
+                    "type": "string"
+                  },
+                  "Sender.Address.City": {
+                    "type": "string"
+                  },
+                  "Sender.Address.Country": {
+                    "type": "string"
+                  },
+                  "Sender.IsExporterDifferentFromSender": {
                     "type": "boolean"
                   },
                   "InvoiceRequisites.InvoiceNumber": {
@@ -397,6 +446,27 @@
                 "Importer.IsImporterDifferentFromRecipient": {
                   "style": "form"
                 },
+                "Recipient.Voen": {
+                  "style": "form"
+                },
+                "Recipient.Name": {
+                  "style": "form"
+                },
+                "Recipient.Address.StreetAndNumber": {
+                  "style": "form"
+                },
+                "Recipient.Address.PostalCode": {
+                  "style": "form"
+                },
+                "Recipient.Address.City": {
+                  "style": "form"
+                },
+                "Recipient.Address.Country": {
+                  "style": "form"
+                },
+                "Recipient.IsImporterDifferentFromRecipient": {
+                  "style": "form"
+                },
                 "Exporter.Voen": {
                   "style": "form"
                 },
@@ -416,6 +486,27 @@
                   "style": "form"
                 },
                 "Exporter.IsExporterDifferentFromSender": {
+                  "style": "form"
+                },
+                "Sender.Voen": {
+                  "style": "form"
+                },
+                "Sender.Name": {
+                  "style": "form"
+                },
+                "Sender.Address.StreetAndNumber": {
+                  "style": "form"
+                },
+                "Sender.Address.PostalCode": {
+                  "style": "form"
+                },
+                "Sender.Address.City": {
+                  "style": "form"
+                },
+                "Sender.Address.Country": {
+                  "style": "form"
+                },
+                "Sender.IsExporterDifferentFromSender": {
                   "style": "form"
                 },
                 "InvoiceRequisites.InvoiceNumber": {

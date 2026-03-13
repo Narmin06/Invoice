@@ -10,5 +10,6 @@ public class Exporter : BaseEntity
 
     public Guid InvoiceId { get; set; }
 
+
     public EExporterStatus Status {  get; set; }
 }

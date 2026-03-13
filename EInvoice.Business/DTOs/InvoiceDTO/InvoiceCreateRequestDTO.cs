@@ -9,7 +9,9 @@ public class InvoiceCreateRequestDTO
 {
     public string PinCode { get; set; } = string.Empty;
     public ImporterDto Importer { get; set; } = null!;
+    public ImporterDto? Recipient { get; set; } 
     public ExporterDto Exporter { get; set; } = null!;
+    public ExporterDto? Sender { get; set; } 
     public InvoiceRequisitesDto InvoiceRequisites { get; set; } = null!;
     public CircumstancesAffectingInvoiceDto CircumstancesAffectingInvoice { get; set; } = null!;
 

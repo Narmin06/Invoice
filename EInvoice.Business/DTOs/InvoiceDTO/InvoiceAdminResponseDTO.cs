@@ -1,10 +1,11 @@
 ﻿using EInvoice.Business.DTOs.AddressDTO;
+using EInvoice.Business.DTOs.CommonDTO;
 using EInvoice.Business.DTOs.GoodDTO;
 using EInvoice.Business.DTOs.InvoiceFieldValueDTO;
 using EInvoice.Domain.Enum;
 namespace EInvoice.Business.DTOs.InvoiceDTO;
 
-public class InvoiceAdminResponseDTO
+public class InvoiceAdminResponseDTO : AuditableEntityDto, ISoftDeletableDto
 {
     public string PinCode { get; set; } = string.Empty;
     public EInvoiceStatus Status { get; set; } = EInvoiceStatus.Pending;
@@ -58,9 +59,6 @@ public class InvoiceAdminResponseDTO
     public IEnumerable<GoodAdminResponseDto> Goods { get; set; } = new List<GoodAdminResponseDto>();
     public IEnumerable<InvoiceFieldValueResponseDTO> FieldValues { get; set; } = new List<InvoiceFieldValueResponseDTO>();
 
-    public DateTime CreateTime { get; set; }
-    public DateTime UpdateTime { get; set; }
     public DateTime? DeleteTime { get; set; }
-    public bool IsDeleted { get; set; } 
-    public bool IsActive { get; set; }          
+    public bool IsDeleted { get; set; }        
 }

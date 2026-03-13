@@ -201,6 +201,41 @@
         "IsRequired": false
       },
       {
+        "Name": "Recipient.Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Recipient.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Recipient.Address.StreetAndNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Recipient.Address.PostalCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Recipient.Address.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Recipient.Address.Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Recipient.IsImporterDifferentFromRecipient",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
         "Name": "Exporter.Voen",
         "Type": "System.String",
         "IsRequired": false
@@ -232,6 +267,41 @@
       },
       {
         "Name": "Exporter.IsExporterDifferentFromSender",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sender.Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sender.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sender.Address.StreetAndNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sender.Address.PostalCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sender.Address.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sender.Address.Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Sender.IsExporterDifferentFromSender",
         "Type": "System.Boolean",
         "IsRequired": false
       },

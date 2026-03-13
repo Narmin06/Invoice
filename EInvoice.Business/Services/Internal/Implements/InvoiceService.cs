@@ -12,6 +12,7 @@ using EInvoice.DAL.Data;
 using EInvoice.Domain.Enum;
 using EInvoice.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata;
 
 namespace EInvoice.Business.Services.Internal.Implements;
 
@@ -232,7 +233,6 @@ public class InvoiceService : IInvoiceService
                 },
                 Status = EExporterStatus.Sender  
             };
-            _unitOfWork.Repository<Exporter>().Create(sender);
         }
 
 
@@ -266,7 +266,6 @@ public class InvoiceService : IInvoiceService
                 },
                 Status = EImporterStatus.Recipient
             };
-            _unitOfWork.Repository<Importer>().Create(recipient);
         }
 
 
@@ -677,6 +676,7 @@ public class InvoiceService : IInvoiceService
 
             return new InvoiceAdminResponseDTO
             {
+                Id = invoice.Id,
                 PinCode = invoice.PinCode,
                 Status = invoice.Status,
 
