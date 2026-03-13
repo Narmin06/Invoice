@@ -17,32 +17,6 @@ public class GoodController : ControllerBase
     }
 
 
-    // Public Operations
-    [HttpGet("moderator")]
-    public async Task<IActionResult> GetAllPublicAsync(CancellationToken cancellationToken)
-    {
-        var result = await _goodService.GetAllPublicAsync(cancellationToken);
-        return Ok(result);
-    }
-
-
-    // Admin Operations
-    [HttpGet("admin")]
-    public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
-    {
-        var result = await _goodService.GetAllAsync(cancellationToken);
-        return Ok(result);
-    }
-
-
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
-    {
-        var result = await _goodService.GetByIdAsync(id, cancellationToken);
-        return Ok(result);
-    }
-
-
     [HttpPost]
     public async Task<IActionResult> CreateAsync([FromBody] GoodCreateRequestDTO goodDto, CancellationToken cancellationToken)
     {
@@ -62,6 +36,29 @@ public class GoodController : ControllerBase
 
         await _goodService.UpdateAsync(id, goodDto, cancellationToken);
         return Ok(new { message = "Good updated successfully." });
+    }
+
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    {
+        var result = await _goodService.GetByIdAsync(id, cancellationToken);
+        return Ok(result);
+    }
+
+
+    [HttpGet("admin")]
+    public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
+    {
+        var result = await _goodService.GetAllAsync(cancellationToken);
+        return Ok(result);
+    }
+
+    [HttpGet("moderator")]
+    public async Task<IActionResult> GetAllPublicAsync(CancellationToken cancellationToken)
+    {
+        var result = await _goodService.GetAllPublicAsync(cancellationToken);
+        return Ok(result);
     }
 
 

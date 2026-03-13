@@ -9,5 +9,6 @@ public enum ETypeFunds
     Royalty = 5,                // Royalti
     Licenses = 6,               // Lisenziyalar
     OtherCostsIncrease = 7,     // Digər xərclər (Artıran)
-    OtherCostsDecrease = 8      // Digər xərclər (Azaldan)
+    OtherCostsDecrease = 8,      // Digər xərclər (Azaldan)
+    None
 }

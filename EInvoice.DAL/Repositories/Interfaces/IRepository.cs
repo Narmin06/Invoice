@@ -10,7 +10,8 @@ public interface IRepository<TEntity> where TEntity : BaseEntity
 
     Task<TEntity> GetAsync(Expression<Func<TEntity, bool>>? filter = null,
                                       Func<IQueryable<TEntity>, IQueryable<TEntity>>? includes = null,
-                                      bool tracking = false, CancellationToken cancellationToken = default);
+                                      bool tracking = false,
+                                      CancellationToken cancellationToken = default);
 
     Task<TEntity?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
     void Create(TEntity entity);

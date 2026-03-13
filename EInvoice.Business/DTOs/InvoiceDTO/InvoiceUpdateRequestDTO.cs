@@ -8,10 +8,10 @@ namespace EInvoice.Business.DTOs.InvoiceDTO;
 
 public class InvoiceUpdateRequestDTO
 {
-    public ImporterDto? Importer { get; set; }
-    public ExporterDto? Exporter { get; set; }
-    public InvoiceRequisitesDto? InvoiceRequisites { get; set; }
-    public CircumstancesAffectingInvoiceDto? CircumstancesAffectingInvoice { get; set; }
+    public ImporterDto Importer { get; set; } = null!;
+    public ExporterDto Exporter { get; set; } = null!;
+    public InvoiceRequisitesDto InvoiceRequisites { get; set; } = null!;
+    public CircumstancesAffectingInvoiceDto CircumstancesAffectingInvoice { get; set; } = null!;
 
     public required IFormFile File { get; set; }
 

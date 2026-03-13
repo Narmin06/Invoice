@@ -2,10 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class InvoiceConfiguration : IEntityTypeConfiguration<Importer>
+public class ImporterConfiguration : IEntityTypeConfiguration<Importer>
 {
     public void Configure(EntityTypeBuilder<Importer> builder)
     {
-        builder.OwnsOne(imp => imp.Address); 
+        builder.OwnsOne(imp => imp.Address);
     }
 }

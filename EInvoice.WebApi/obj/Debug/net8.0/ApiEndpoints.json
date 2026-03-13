@@ -17,22 +17,6 @@
   },
   {
     "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
-    "Method": "GetByIdAsync",
-    "RelativePath": "api/Good/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
     "Method": "UpdateAsync",
     "RelativePath": "api/Good/{id}",
     "HttpMethod": "PUT",
@@ -47,6 +31,22 @@
       {
         "Name": "goodDto",
         "Type": "EInvoice.Business.DTOs.GoodDTO.GoodUpdateRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/Good/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -140,6 +140,159 @@
     "ContainingType": "EInvoice.WebApi.Controllers.GoodController",
     "Method": "SoftDeleteAsync",
     "RelativePath": "api/Good/softdelete/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/InvoiceFieldDefinition",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceDto",
+        "Type": "EInvoice.Business.DTOs.InvoiceFieldDefinitionDTO.InvoiceFieldDefinitionCreateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "UpdateAsync",
+    "RelativePath": "api/InvoiceFieldDefinition/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "invoiceDto",
+        "Type": "EInvoice.Business.DTOs.InvoiceFieldDefinitionDTO.InvoiceFieldDefinitionUpdateRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/InvoiceFieldDefinition/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/InvoiceFieldDefinition/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "GetAllAdminAsync",
+    "RelativePath": "api/InvoiceFieldDefinition/admin",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "GetAllPublicAsync",
+    "RelativePath": "api/InvoiceFieldDefinition/moderator",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "RecoverAsync",
+    "RelativePath": "api/InvoiceFieldDefinition/recover/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
+    "Method": "SoftDeleteAsync",
+    "RelativePath": "api/InvoiceFieldDefinition/softdelete/{id}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,

@@ -9,3 +9,4 @@ C:\Users\ASUS\Desktop\EInvoice\EInvoice.Domain\obj\Debug\net8.0\EInvoice.Domain.
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.Domain\obj\Debug\net8.0\refint\EInvoice.Domain.dll
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.Domain\obj\Debug\net8.0\EInvoice.Domain.pdb
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.Domain\obj\Debug\net8.0\ref\EInvoice.Domain.dll
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Domain\obj\Debug\net8.0\EInvoice.Domain.sourcelink.json

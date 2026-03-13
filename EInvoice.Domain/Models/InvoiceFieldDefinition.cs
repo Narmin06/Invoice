@@ -8,10 +8,11 @@ public class InvoiceFieldDefinition : AuditableEntity, ISoftDeletable
     public bool IsRequired { get; set; } = true;
     public EFieldType FieldType { get; set; } = EFieldType.Text;    // Sahə tipi (məsələn, "text", "dropdown", "number" və s.)
 
-    public Guid InvoiceId { get; set; }
-    public Invoice Invoice { get; set; } = null!;
+
+
+    public ICollection<InvoiceFieldValue> InvoiceFieldValues { get; set; } = new List<InvoiceFieldValue>();
+
 
     public bool IsDeleted { get; set; }
     public DateTime? DeletedTime { get; set; }
-
 }

@@ -8,7 +8,7 @@ public class InvoiceResponseDTO
     public DateTime CreateTime { get; set; }
     public string InvoiceNumber { get; set; } = string.Empty;           //InvoiceRequisites dan gelir
     public DateTime InvoiceDate { get; set; }                           //InvoiceRequisites dan gelir
-    public string ExporterName { get; set; } = string.Empty;            //Exporter dan geli
+    public string ExporterName { get; set; } = string.Empty;            //Exporter dan gelir
     public string ImporterName { get; set; } = string.Empty;            //Importer dan gelir
     public string GoodsCount { get; set; } = string.Empty;              //Invoice dan gelir
     public string TotalAmount { get; set; } = string.Empty;             // GoodDto dan gelir

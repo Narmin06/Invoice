@@ -19,6 +19,7 @@ builder.Services.AddScoped<IInvoiceFieldDefinitionRepository, InvoiceFieldDefini
 builder.Services.AddScoped<IInvoiceFieldValueRepository, InvoiceFieldValueRepository>();
 
 builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IInvoiceFieldDefinitionService, InvoiceFieldDefinitionService>();
 builder.Services.AddScoped<IGoodService,GoodService>();
 
 builder.Services.AddControllers();

@@ -9,16 +9,31 @@ public class InvoiceAdminResponseDTO
     public string PinCode { get; set; } = string.Empty;
     public EInvoiceStatus Status { get; set; } = EInvoiceStatus.Pending;
 
+
     // Exporter 
     public string? ExporterVoen { get; set; }
     public string ExporterName { get; set; } = string.Empty;  
-    public AddressDto? ExporterAddressDto { get; set; }
+    public AddressDto? ExporterAddress { get; set; }
+    public EExporterStatus ExporterStatus { get; set; }
+
+
+    // Sender -> Exporter cedvelinden gelir. Statuslari ferqlidi bir dene
+    public string? SenderVoen { get; set; }              
+    public string SenderName { get; set; } = string.Empty;
+    public AddressDto? SenderAddress { get; set; }
 
 
     // Importer
     public string? ImporterVoen { get; set; }
     public string ImporterName { get; set; } = string.Empty;
-    public AddressDto? ImporterAddressDto { get; set; }
+    public AddressDto? ImporterAddress { get; set; }
+    public EImporterStatus ImporterStatus { get; set; }
+
+
+    // Recipient -> Importer cedvelinden gelir. Statuslari ferqlidi bir dene
+    public string? RecipientVoen { get; set; }
+    public string RecipientName { get; set; } = string.Empty;
+    public AddressDto? RecipientAddress { get; set; }
 
 
     // Invoice Requisites

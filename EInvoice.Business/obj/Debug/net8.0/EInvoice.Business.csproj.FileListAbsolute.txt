@@ -15,3 +15,4 @@ C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Busin
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\refint\EInvoice.Business.dll
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.pdb
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\ref\EInvoice.Business.dll
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.Business\obj\Debug\net8.0\EInvoice.Business.sourcelink.json

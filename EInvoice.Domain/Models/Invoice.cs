@@ -4,13 +4,14 @@ namespace EInvoice.Domain.Models;
 
 public class Invoice : AuditableEntity, ISoftDeletable
 {
+    //public ICollection<Exporter> Exporters { get; set; } = new List<Exporter>();
+    //public ICollection<Importer> Importers { get; set; } = new List<Importer>();
     public Importer Importer { get; set; } = null!;
-
     public Exporter Exporter { get; set; } = null!;
-    public InvoiceRequisites? InvoiceRequisites { get; set; }
-    public CircumstancesAffectingInvoice CircumstancesAffectingInvoice { get; set; } = null!;
+    public InvoiceRequisites InvoiceRequisites { get; set; } = null!;
+    public CircumstancesAffectingInvoice? CircumstancesAffectingInvoice { get; set; }
 
-
+    public string PinCode { get; set; } = string.Empty;                        // Eslinde Tokenden goturmelidir. 
     public EInvoiceStatus Status { get; set; }
 
     public ICollection<Good> Goods { get; set; } = new List<Good>();
@@ -20,8 +21,6 @@ public class Invoice : AuditableEntity, ISoftDeletable
     public DateTime? DeletedTime { get; set; }
     public bool IsDeleted { get; set; }
 
-    public ICollection<InvoiceFieldValue> FieldValues { get; set; } = new List<InvoiceFieldValue>();
+    public ICollection<InvoiceFieldValue> InvoiceFieldValues { get; set; } = new List<InvoiceFieldValue>();
+    public ICollection<InvoiceUpdateHistory> UpdateHistories { get; set; } = new List<InvoiceUpdateHistory>();
 }
-
-
-

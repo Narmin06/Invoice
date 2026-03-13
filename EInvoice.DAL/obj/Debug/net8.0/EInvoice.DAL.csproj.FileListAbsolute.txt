@@ -15,3 +15,4 @@ C:\Users\ASUS\Desktop\EInvoice\EInvoice.DAL\bin\Debug\net8.0\EInvoice.Domain.pdb
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.DAL\obj\Debug\net8.0\EInvoice.DAL.csproj.AssemblyReference.cache
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.DAL\obj\Debug\net8.0\EInvoice.824FADF3.Up2Date
 C:\Users\ASUS\Desktop\EInvoice\EInvoice.DAL\obj\Debug\net8.0\EInvoice.DAL.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\EInvoice\EInvoice.DAL\obj\Debug\net8.0\EInvoice.DAL.sourcelink.json

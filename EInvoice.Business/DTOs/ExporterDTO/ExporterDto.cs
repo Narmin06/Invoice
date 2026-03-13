@@ -6,5 +6,5 @@ public class ExporterDto
     public string? Voen { get; set; }
     public required string Name { get; set; }
     public required AddressDto Address { get; set; }
-    public bool IsExporterDifferentFromSender { get; set; } = false;
+    public bool IsExporterDifferentFromSender { get; set; }         // true olsa StatusExporter = 2 
 }

@@ -20,7 +20,7 @@ public class GoodService : IGoodService
     }
 
     // Public Operations
-    public async Task<IEnumerable<GoodResponseDto>> GetAllPublicAsync(CancellationToken cancellationToken)
+    public async Task<IEnumerable<GoodResponseDto>> GetAllPublicAsync(CancellationToken cancellationToken = default)
     {
         IQueryable<Good> query = _unitOfWork.Repository<Good>().GetAll(includes: x => x.Include(good => good.Invoice))
             .Where(good => !good.IsDeleted && good.Invoice != null && !good.Invoice.IsDeleted);
@@ -37,7 +37,7 @@ public class GoodService : IGoodService
 
 
     // Admin Operations
-    public async Task CreateAsync(GoodCreateRequestDTO goodDto, CancellationToken cancellationToken)
+    public async Task CreateAsync(GoodCreateRequestDTO goodDto, CancellationToken cancellationToken = default)
     {
         if(goodDto == null)
             throw new ArgumentNullException(nameof(goodDto));
@@ -62,7 +62,7 @@ public class GoodService : IGoodService
     }
 
 
-    public async Task UpdateAsync(Guid id, GoodUpdateRequestDTO goodDto, CancellationToken cancellationToken)
+    public async Task UpdateAsync(Guid id, GoodUpdateRequestDTO goodDto, CancellationToken cancellationToken = default)
     {
         var good = await _unitOfWork.Repository<Good>().GetByIdAsync(id);
 
@@ -79,7 +79,7 @@ public class GoodService : IGoodService
     }
 
 
-    public async Task<PagedResult<GoodAdminResponseDto>> GetAllAsync(CancellationToken cancellationToken)
+    public async Task<PagedResult<GoodAdminResponseDto>> GetAllAsync(CancellationToken cancellationToken = default)
     {
         IQueryable<Good> query = _unitOfWork.Repository<Good>().GetAll(includes: x => x.Include(good => good.Invoice));
 
@@ -113,8 +113,7 @@ public class GoodService : IGoodService
     }
 
 
-
-    public async Task<GoodAdminResponseDto> GetByIdAsync(Guid id, CancellationToken cancellationToken)
+    public async Task<GoodAdminResponseDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var good = await _unitOfWork.Repository<Good>().GetByIdAsync(id, cancellationToken);
 
@@ -134,7 +133,7 @@ public class GoodService : IGoodService
     }
 
 
-    public async Task DeleteAsync(Guid id, CancellationToken cancellationToken)
+    public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var good = await _unitOfWork.Repository<Good>().GetByIdAsync(id, cancellationToken);
 
@@ -142,6 +141,7 @@ public class GoodService : IGoodService
             throw new KeyNotFoundException($"Good with id {id} not found.");
 
         var invoice = await _unitOfWork.Repository<Invoice>().GetByIdAsync(good.InvoiceId, cancellationToken);
+
         if (invoice != null)
         {
             invoice.Goods.Remove(good);
@@ -152,7 +152,7 @@ public class GoodService : IGoodService
     }
 
 
-    public async Task SoftDeleteAsync(Guid id, CancellationToken cancellationToken)
+    public async Task SoftDeleteAsync(Guid id, CancellationToken cancellationToken = default) 
     {
         var good = await _unitOfWork.Repository<Good>().GetByIdAsync(id, cancellationToken);
 
@@ -173,7 +173,7 @@ public class GoodService : IGoodService
     }
 
 
-    public async Task RecoverAsync(Guid id, CancellationToken cancellationToken)
+    public async Task RecoverAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var good = await _unitOfWork.Repository<Good>().GetByIdAsync(id, cancellationToken);
         if(good is null)
@@ -193,7 +193,7 @@ public class GoodService : IGoodService
     }
 
 
-    public async Task ActiceAsync(Guid id, CancellationToken cancellationToken)
+    public async Task ActiceAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var good = await _unitOfWork.Repository<Good>().GetByIdAsync(id);
 
@@ -217,7 +217,7 @@ public class GoodService : IGoodService
     }
 
 
-    public async Task DeActiveAsync(Guid id, CancellationToken cancellationToken)
+    public async Task DeActiveAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var good = await _unitOfWork.Repository<Good>().GetByIdAsync(id);
 
