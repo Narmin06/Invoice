@@ -153,6 +153,618 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "CreateAsync",
+    "RelativePath": "api/Invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PinCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.StreetAndNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.PostalCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.IsImporterDifferentFromRecipient",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.StreetAndNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.PostalCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.IsExporterDifferentFromSender",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.InvoiceNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.InvoiceDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.CurrencyCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.ShortDeclarationNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.Note",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.ContractNumberAndDate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.TransportConditions",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.InvoicePurpose",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.PaymentConditions",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.IsCircumstancesAffectingInvoice",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.DegreeInfluenceInvoice",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.TypeFunds",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.Explanation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.AmountFunds",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "FieldValueJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FieldValues",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[EInvoice.Business.DTOs.InvoiceFieldValueDTO.InvoiceFieldValueCreateRequestDto, EInvoice.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Invoice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CreatedFrom",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedTo",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "SubjectType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceNo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "PinCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumberOfShortDeclaration",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "UpdateAsync",
+    "RelativePath": "api/Invoice/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "Importer.Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.StreetAndNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.PostalCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.Address.Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Importer.IsImporterDifferentFromRecipient",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.StreetAndNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.PostalCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.Address.Country",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Exporter.IsExporterDifferentFromSender",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.InvoiceNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.InvoiceDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.CurrencyCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.ShortDeclarationNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.Note",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.ContractNumberAndDate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.TransportConditions",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.InvoicePurpose",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceRequisites.PaymentConditions",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.IsCircumstancesAffectingInvoice",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.DegreeInfluenceInvoice",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.TypeFunds",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.Explanation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CircumstancesAffectingInvoice.AmountFunds",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "File",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "FieldValueJson",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FieldValues",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[EInvoice.Business.DTOs.InvoiceFieldValueDTO.InvoiceFieldValueCreateRequestDto, EInvoice.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/Invoice/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "DeleteAsync",
+    "RelativePath": "api/Invoice/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "ActivateAsync",
+    "RelativePath": "api/Invoice/{id}/activate",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "ChangeStatusAsync",
+    "RelativePath": "api/Invoice/{id}/change-status",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "DeactivateAsync",
+    "RelativePath": "api/Invoice/{id}/deactivate",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "RecoverAsync",
+    "RelativePath": "api/Invoice/{id}/recover",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "SoftDeleteAsync",
+    "RelativePath": "api/Invoice/{id}/soft-delete",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "UpdateResponseAsync",
+    "RelativePath": "api/Invoice/{id}/update-response",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
+    "Method": "GetAllPublicAsync",
+    "RelativePath": "api/Invoice/moderator",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CreatedFrom",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedTo",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "SubjectType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceNo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "PinCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumberOfShortDeclaration",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EInvoice.WebApi.Controllers.InvoiceFieldDefinitionController",
     "Method": "CreateAsync",
     "RelativePath": "api/InvoiceFieldDefinition",

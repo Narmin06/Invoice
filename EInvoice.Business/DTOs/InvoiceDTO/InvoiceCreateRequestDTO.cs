@@ -16,5 +16,5 @@ public class InvoiceCreateRequestDTO
     public required IFormFile File { get; set; }
 
     public string? FieldValueJson { get; set; }
-    public IEnumerable<InvoiceFieldValueCreateRequestDto> FieldValues { get; set; } = null!;
+    public IEnumerable<InvoiceFieldValueCreateRequestDto>? FieldValues { get; set; } = null!;
 }

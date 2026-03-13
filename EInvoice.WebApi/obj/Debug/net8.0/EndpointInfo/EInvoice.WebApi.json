@@ -238,6 +238,879 @@
         }
       }
     },
+    "/api/Invoice": {
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CircumstancesAffectingInvoice.AmountFunds",
+                  "CircumstancesAffectingInvoice.DegreeInfluenceInvoice",
+                  "CircumstancesAffectingInvoice.Explanation",
+                  "CircumstancesAffectingInvoice.TypeFunds",
+                  "Exporter.Address.City",
+                  "Exporter.Address.Country",
+                  "Exporter.Name",
+                  "File",
+                  "Importer.Address.City",
+                  "Importer.Address.Country",
+                  "Importer.Name",
+                  "Importer.Voen",
+                  "InvoiceRequisites.CurrencyCode",
+                  "InvoiceRequisites.InvoiceDate",
+                  "InvoiceRequisites.InvoiceNumber",
+                  "InvoiceRequisites.InvoicePurpose",
+                  "InvoiceRequisites.PaymentConditions"
+                ],
+                "type": "object",
+                "properties": {
+                  "PinCode": {
+                    "type": "string"
+                  },
+                  "Importer.Voen": {
+                    "type": "string"
+                  },
+                  "Importer.Name": {
+                    "type": "string"
+                  },
+                  "Importer.Address.StreetAndNumber": {
+                    "type": "string"
+                  },
+                  "Importer.Address.PostalCode": {
+                    "type": "string"
+                  },
+                  "Importer.Address.City": {
+                    "type": "string"
+                  },
+                  "Importer.Address.Country": {
+                    "type": "string"
+                  },
+                  "Importer.IsImporterDifferentFromRecipient": {
+                    "type": "boolean"
+                  },
+                  "Exporter.Voen": {
+                    "type": "string"
+                  },
+                  "Exporter.Name": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.StreetAndNumber": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.PostalCode": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.City": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.Country": {
+                    "type": "string"
+                  },
+                  "Exporter.IsExporterDifferentFromSender": {
+                    "type": "boolean"
+                  },
+                  "InvoiceRequisites.InvoiceNumber": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.InvoiceDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "InvoiceRequisites.CurrencyCode": {
+                    "$ref": "#/components/schemas/ECurrency"
+                  },
+                  "InvoiceRequisites.ShortDeclarationNumber": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.Note": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.ContractNumberAndDate": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.TransportConditions": {
+                    "$ref": "#/components/schemas/ETransportConditions"
+                  },
+                  "InvoiceRequisites.InvoicePurpose": {
+                    "$ref": "#/components/schemas/EInvoicePurpose"
+                  },
+                  "InvoiceRequisites.PaymentConditions": {
+                    "$ref": "#/components/schemas/EPaymentConditions"
+                  },
+                  "CircumstancesAffectingInvoice.IsCircumstancesAffectingInvoice": {
+                    "type": "boolean"
+                  },
+                  "CircumstancesAffectingInvoice.DegreeInfluenceInvoice": {
+                    "$ref": "#/components/schemas/EDegreeInfluenceInvoice"
+                  },
+                  "CircumstancesAffectingInvoice.TypeFunds": {
+                    "$ref": "#/components/schemas/ETypeFunds"
+                  },
+                  "CircumstancesAffectingInvoice.Explanation": {
+                    "type": "string"
+                  },
+                  "CircumstancesAffectingInvoice.AmountFunds": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "FieldValueJson": {
+                    "type": "string"
+                  },
+                  "FieldValues": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InvoiceFieldValueCreateRequestDto"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "PinCode": {
+                  "style": "form"
+                },
+                "Importer.Voen": {
+                  "style": "form"
+                },
+                "Importer.Name": {
+                  "style": "form"
+                },
+                "Importer.Address.StreetAndNumber": {
+                  "style": "form"
+                },
+                "Importer.Address.PostalCode": {
+                  "style": "form"
+                },
+                "Importer.Address.City": {
+                  "style": "form"
+                },
+                "Importer.Address.Country": {
+                  "style": "form"
+                },
+                "Importer.IsImporterDifferentFromRecipient": {
+                  "style": "form"
+                },
+                "Exporter.Voen": {
+                  "style": "form"
+                },
+                "Exporter.Name": {
+                  "style": "form"
+                },
+                "Exporter.Address.StreetAndNumber": {
+                  "style": "form"
+                },
+                "Exporter.Address.PostalCode": {
+                  "style": "form"
+                },
+                "Exporter.Address.City": {
+                  "style": "form"
+                },
+                "Exporter.Address.Country": {
+                  "style": "form"
+                },
+                "Exporter.IsExporterDifferentFromSender": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.InvoiceNumber": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.InvoiceDate": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.CurrencyCode": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.ShortDeclarationNumber": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.Note": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.ContractNumberAndDate": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.TransportConditions": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.InvoicePurpose": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.PaymentConditions": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.IsCircumstancesAffectingInvoice": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.DegreeInfluenceInvoice": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.TypeFunds": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.Explanation": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.AmountFunds": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                },
+                "FieldValueJson": {
+                  "style": "form"
+                },
+                "FieldValues": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "CreatedFrom",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "CreatedTo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "SubjectType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ESubjectTypeDto"
+            }
+          },
+          {
+            "name": "Voen",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "InvoiceNo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "InvoiceDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "PinCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NumberOfShortDeclaration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/{id}": {
+      "put": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CircumstancesAffectingInvoice.AmountFunds",
+                  "CircumstancesAffectingInvoice.DegreeInfluenceInvoice",
+                  "CircumstancesAffectingInvoice.Explanation",
+                  "CircumstancesAffectingInvoice.TypeFunds",
+                  "Exporter.Address.City",
+                  "Exporter.Address.Country",
+                  "Exporter.Name",
+                  "File",
+                  "Importer.Address.City",
+                  "Importer.Address.Country",
+                  "Importer.Name",
+                  "Importer.Voen",
+                  "InvoiceRequisites.CurrencyCode",
+                  "InvoiceRequisites.InvoiceDate",
+                  "InvoiceRequisites.InvoiceNumber",
+                  "InvoiceRequisites.InvoicePurpose",
+                  "InvoiceRequisites.PaymentConditions"
+                ],
+                "type": "object",
+                "properties": {
+                  "Importer.Voen": {
+                    "type": "string"
+                  },
+                  "Importer.Name": {
+                    "type": "string"
+                  },
+                  "Importer.Address.StreetAndNumber": {
+                    "type": "string"
+                  },
+                  "Importer.Address.PostalCode": {
+                    "type": "string"
+                  },
+                  "Importer.Address.City": {
+                    "type": "string"
+                  },
+                  "Importer.Address.Country": {
+                    "type": "string"
+                  },
+                  "Importer.IsImporterDifferentFromRecipient": {
+                    "type": "boolean"
+                  },
+                  "Exporter.Voen": {
+                    "type": "string"
+                  },
+                  "Exporter.Name": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.StreetAndNumber": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.PostalCode": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.City": {
+                    "type": "string"
+                  },
+                  "Exporter.Address.Country": {
+                    "type": "string"
+                  },
+                  "Exporter.IsExporterDifferentFromSender": {
+                    "type": "boolean"
+                  },
+                  "InvoiceRequisites.InvoiceNumber": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.InvoiceDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "InvoiceRequisites.CurrencyCode": {
+                    "$ref": "#/components/schemas/ECurrency"
+                  },
+                  "InvoiceRequisites.ShortDeclarationNumber": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.Note": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.ContractNumberAndDate": {
+                    "type": "string"
+                  },
+                  "InvoiceRequisites.TransportConditions": {
+                    "$ref": "#/components/schemas/ETransportConditions"
+                  },
+                  "InvoiceRequisites.InvoicePurpose": {
+                    "$ref": "#/components/schemas/EInvoicePurpose"
+                  },
+                  "InvoiceRequisites.PaymentConditions": {
+                    "$ref": "#/components/schemas/EPaymentConditions"
+                  },
+                  "CircumstancesAffectingInvoice.IsCircumstancesAffectingInvoice": {
+                    "type": "boolean"
+                  },
+                  "CircumstancesAffectingInvoice.DegreeInfluenceInvoice": {
+                    "$ref": "#/components/schemas/EDegreeInfluenceInvoice"
+                  },
+                  "CircumstancesAffectingInvoice.TypeFunds": {
+                    "$ref": "#/components/schemas/ETypeFunds"
+                  },
+                  "CircumstancesAffectingInvoice.Explanation": {
+                    "type": "string"
+                  },
+                  "CircumstancesAffectingInvoice.AmountFunds": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "FieldValueJson": {
+                    "type": "string"
+                  },
+                  "FieldValues": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InvoiceFieldValueCreateRequestDto"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "Importer.Voen": {
+                  "style": "form"
+                },
+                "Importer.Name": {
+                  "style": "form"
+                },
+                "Importer.Address.StreetAndNumber": {
+                  "style": "form"
+                },
+                "Importer.Address.PostalCode": {
+                  "style": "form"
+                },
+                "Importer.Address.City": {
+                  "style": "form"
+                },
+                "Importer.Address.Country": {
+                  "style": "form"
+                },
+                "Importer.IsImporterDifferentFromRecipient": {
+                  "style": "form"
+                },
+                "Exporter.Voen": {
+                  "style": "form"
+                },
+                "Exporter.Name": {
+                  "style": "form"
+                },
+                "Exporter.Address.StreetAndNumber": {
+                  "style": "form"
+                },
+                "Exporter.Address.PostalCode": {
+                  "style": "form"
+                },
+                "Exporter.Address.City": {
+                  "style": "form"
+                },
+                "Exporter.Address.Country": {
+                  "style": "form"
+                },
+                "Exporter.IsExporterDifferentFromSender": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.InvoiceNumber": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.InvoiceDate": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.CurrencyCode": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.ShortDeclarationNumber": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.Note": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.ContractNumberAndDate": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.TransportConditions": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.InvoicePurpose": {
+                  "style": "form"
+                },
+                "InvoiceRequisites.PaymentConditions": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.IsCircumstancesAffectingInvoice": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.DegreeInfluenceInvoice": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.TypeFunds": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.Explanation": {
+                  "style": "form"
+                },
+                "CircumstancesAffectingInvoice.AmountFunds": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                },
+                "FieldValueJson": {
+                  "style": "form"
+                },
+                "FieldValues": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/{id}/update-response": {
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/moderator": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "CreatedFrom",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "CreatedTo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "SubjectType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/ESubjectTypeDto"
+            }
+          },
+          {
+            "name": "Voen",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "InvoiceNo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "InvoiceDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "PinCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NumberOfShortDeclaration",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/{id}/soft-delete": {
+      "patch": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/{id}/recover": {
+      "patch": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/{id}/activate": {
+      "patch": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/{id}/deactivate": {
+      "patch": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Invoice/{id}/change-status": {
+      "patch": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/InvoiceFieldDefinition": {
       "post": {
         "tags": [
@@ -476,11 +1349,135 @@
   },
   "components": {
     "schemas": {
+      "ECurrency": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EDegreeInfluenceInvoice": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "EFieldType": {
         "enum": [
           1,
           2,
           3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EInvoicePurpose": {
+        "enum": [
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EPaymentConditions": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          100,
+          110,
+          120,
+          130,
+          140,
+          200,
+          210,
+          220
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ESubjectTypeDto": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ETransportConditions": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ETypeFunds": {
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
         ],
         "type": "integer",
         "format": "int32"
@@ -569,6 +1566,20 @@
           },
           "fieldType": {
             "$ref": "#/components/schemas/EFieldType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvoiceFieldValueCreateRequestDto": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "invoiceFieldDefinitionId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
