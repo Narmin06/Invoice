@@ -361,6 +361,7 @@ public class InvoiceService : IInvoiceService
         if (invoice == null)
             throw new KeyNotFoundException($"Invoice with id {id} not found.");
 
+        invoice.PinCode = dto.PinCode;
 
         // InvoiceRequisites yenilənməsi
         invoice.InvoiceRequisites.InvoiceNumber = dto.InvoiceRequisites.InvoiceNumber ?? string.Empty;

@@ -7,7 +7,7 @@ using EInvoice.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 namespace EInvoice.Business.Services.Internal.Implements;
 
-public class GoodService : IGoodService
+public class GoodService : IGoodService                    
 {
     private readonly IUnitOfWork _unitOfWork;
     public GoodService(IUnitOfWork unitOfWork)
@@ -51,7 +51,7 @@ public class GoodService : IGoodService
         var invoice = await _unitOfWork.Repository<Invoice>().GetByIdAsync(goodDto.InvoiceId, cancellationToken);
         if (invoice != null)
         {
-            invoice.Goods.Add(good);        //Invoice-deki Goods siyahısına add
+            invoice.Goods.Add(good);            // Invoice-deki Goods siyahısına add
         }
 
         _unitOfWork.Repository<Good>().Create(good);
