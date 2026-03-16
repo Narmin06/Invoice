@@ -133,35 +133,4 @@ public class GoodController : ControllerBase
             return StatusCode(500, new { message = ex.Message });
         }
     }
-
-
-    //[HttpGet("export")]
-    //public async Task<IActionResult> ExportGoodsToExcelAsync(CancellationToken cancellationToken)
-    //{
-    //    try
-    //    {
-    //        var fileUrl = await _goodService.ExportGoodsToExcelAsync(cancellationToken);
-    //        return Ok(new { fileUrl });
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        return StatusCode(500, new { message = ex.Message });
-    //    }
-
-    //}
-
-
-    //[HttpPost("import")]
-    //public async Task<IActionResult> ImportGoodsFromExcelAsync([FromForm] IFormFile file, [FromQuery] bool deleteOldGoods, CancellationToken cancellationToken)
-    //{
-    //    try
-    //    {
-    //       await _goodService.ImportGoodsFromExcelAsync(file, deleteOldGoods, cancellationToken);
-    //        return Ok(new { message = "Goods imported successfully." });
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //     return StatusCode(500, new { message = ex.Message });
-    //    }
-    //}
 }

@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\EInvoice\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.business\\services\\internal\\implements\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|solutionrelative:einvoice.business\\services\\internal\\implements\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.business\\services\\internal\\implements\\goodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|solutionrelative:einvoice.business\\services\\internal\\implements\\goodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4214794-EFB3-4FB0-ADE4-849C60E1659A}|EInvoice.WebApi\\EInvoice.WebApi.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.webapi\\controllers\\goodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4214794-EFB3-4FB0-ADE4-849C60E1659A}|EInvoice.WebApi\\EInvoice.WebApi.csproj|solutionrelative:einvoice.webapi\\controllers\\goodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.business\\services\\internal\\implements\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|solutionrelative:einvoice.business\\services\\internal\\implements\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GoodService.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
-              "RelativeDocumentMoniker": "EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
-              "RelativeToolTip": "EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwGQAAAAUAAAAAAAAAA==",
+              "Title": "GoodController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.WebApi\\Controllers\\GoodController.cs",
+              "RelativeDocumentMoniker": "EInvoice.WebApi\\Controllers\\GoodController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.WebApi\\Controllers\\GoodController.cs",
+              "RelativeToolTip": "EInvoice.WebApi\\Controllers\\GoodController.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAcwIcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T10:35:49.122Z",
+              "WhenOpened": "2026-03-16T12:51:50.751Z",
               "EditorCaption": ""
             },
             {
@@ -40,12 +44,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GoodService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
+              "RelativeDocumentMoniker": "EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
+              "RelativeToolTip": "EInvoice.Business\\Services\\Internal\\Implements\\GoodService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:35:49.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "InvoiceService.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
               "RelativeDocumentMoniker": "EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
               "RelativeToolTip": "EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
-              "ViewState": "AgIAAN0BAAAAAAAAAAAkwPMBAABHAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T08:41:22.376Z",
               "EditorCaption": ""

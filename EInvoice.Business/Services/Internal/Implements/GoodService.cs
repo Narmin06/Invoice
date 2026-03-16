@@ -7,7 +7,7 @@ using EInvoice.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 namespace EInvoice.Business.Services.Internal.Implements;
 
-public class GoodService : IGoodService                    
+public class GoodService : IGoodService         
 {
     private readonly IUnitOfWork _unitOfWork;
     public GoodService(IUnitOfWork unitOfWork)
