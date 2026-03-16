@@ -9,6 +9,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder (args);
 
+//builder.Services.AddSwaggerGen(c =>
+//{
+//    c.SwaggerDoc("v1", new OpenApiInfo { Title = "EInvoice API", Version = "v1" });
+
+//    // ?FormFile il? fayl yükl?m?sini düzgün i?l?tdirm?k üçün bu ?lav? etm?lisiniz
+//    c.OperationFilter<FileUploadOperationFilter>();
+//});
+
 builder.Services.AddDbContext<AppDbContext>(opt =>opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

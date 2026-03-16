@@ -1,6 +1,6 @@
 ﻿namespace EInvoice.Business.DTOs.CommonDTO.EnumDTO;
 
-public enum ESubjectTypeDto
+public enum ESubjectType
 {
     Importer,
     Sender,

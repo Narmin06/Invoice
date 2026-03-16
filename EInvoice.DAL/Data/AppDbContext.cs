@@ -19,4 +19,5 @@ public class AppDbContext : DbContext
     public DbSet<Exporter> Exporters => Set<Exporter>();
     public DbSet<InvoiceFieldValue> InvoiceFieldValues => Set<InvoiceFieldValue>();
     public DbSet<InvoiceFieldDefinition> InvoiceFieldDefinitions => Set<InvoiceFieldDefinition>();
+    public DbSet<InvoiceUpdateHistory> InvoiceUpdateHistories => Set<InvoiceUpdateHistory>();
 }

@@ -4,8 +4,6 @@ using EInvoice.Business.DTOs.InvoiceFieldValueDTO;
 using EInvoice.Business.Services.Internal.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Threading;
-
 namespace EInvoice.WebApi.Controllers;
 
 [Route("api/[controller]")]
@@ -13,7 +11,6 @@ namespace EInvoice.WebApi.Controllers;
 public class InvoiceController : ControllerBase
 {
     private readonly IInvoiceService _invoiceService;
-
     public InvoiceController(IInvoiceService invoiceService) 
     {
         _invoiceService = invoiceService;
@@ -60,13 +57,6 @@ public class InvoiceController : ControllerBase
     }
 
 
-    [HttpPost("{id}/update-response")]
-    public async Task<IActionResult> UpdateResponseAsync(Guid id, CancellationToken cancellationToken)
-    {
-        var result = await _invoiceService.UpdateResponseAsync(id, cancellationToken);
-        return Ok(result);
-    }
-
 
     [HttpGet("moderator")]
     public async Task<IActionResult> GetAllPublicAsync([FromQuery] InvoiceQueryDTO dto, CancellationToken cancellationToken)
@@ -79,7 +69,7 @@ public class InvoiceController : ControllerBase
     }
 
 
-    [HttpGet]
+    [HttpGet("admin")]
     public async Task<IActionResult> GetAllAsync([FromQuery] InvoiceQueryDTO dto, CancellationToken cancellationToken)
     {
         if (dto == null)

@@ -1,7 +1,6 @@
 using EInvoice.Domain.Enum;
 namespace EInvoice.Domain.Models;
 
-
 public class CircumstancesAffectingInvoice
 {
     public required EDegreeInfluenceInvoice DegreeInfluenceInvoice { get; set; }  

@@ -37,6 +37,7 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEnti
         return query;
     }
 
+
     public Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> filter,
                                            Func<IQueryable<TEntity>, IQueryable<TEntity>>? includes = null,
                                            bool tracking = false,

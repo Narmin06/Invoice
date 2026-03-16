@@ -1,6 +1,5 @@
 ﻿using EInvoice.Business.DTOs.CommonDTO;
 using EInvoice.Business.DTOs.InvoiceFieldDefinitionDTO;
-
 namespace EInvoice.Business.Services.Internal.Interfaces;
 
 public interface IInvoiceFieldDefinitionService

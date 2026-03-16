@@ -84,7 +84,7 @@ namespace EInvoice.DAL.Migrations
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -151,7 +151,7 @@ namespace EInvoice.DAL.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -187,7 +187,7 @@ namespace EInvoice.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -213,7 +213,7 @@ namespace EInvoice.DAL.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Value")
@@ -252,14 +252,14 @@ namespace EInvoice.DAL.Migrations
                     b.Property<int>("StatusUpdate")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("UpdateTime")
+                    b.Property<DateTime?>("UpdateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("InvoiceId");
 
-                    b.ToTable("InvoiceUpdateHistory");
+                    b.ToTable("InvoiceUpdateHistories");
                 });
 
             modelBuilder.Entity("EInvoice.Domain.Models.Exporter", b =>

@@ -12,15 +12,12 @@ using EInvoice.DAL.Data;
 using EInvoice.Domain.Enum;
 using EInvoice.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
-
 namespace EInvoice.Business.Services.Internal.Implements;
 
 public class InvoiceService : IInvoiceService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IFileService _fileService;
-
     public InvoiceService(IUnitOfWork unitOfWork, IFileService fileService)
     {
         _unitOfWork = unitOfWork;
@@ -36,7 +33,8 @@ public class InvoiceService : IInvoiceService
                                                                                              .Include(invoice => invoice.InvoiceRequisites)
                                                                                              .Include(invoice => invoice.CircumstancesAffectingInvoice)
                                                                                              .Include(invoice => invoice.Goods)
-                                                                                             .Include(invoice => invoice.InvoiceFieldValues));
+                                                                                             .Include(invoice => invoice.InvoiceFieldValues)
+                                                                                             .Include(invoice => invoice.UpdateHistories));
         query = query.Where(x => !x.IsDeleted && x.IsActive);
 
         if (dto is null)
@@ -49,9 +47,9 @@ public class InvoiceService : IInvoiceService
             query = query.Where(x => x.CreateTime <= dto.CreatedTo.Value);
 
         if (!string.IsNullOrEmpty(dto.InvoiceNo))
-            query = query.Where(x => x.InvoiceRequisites != null && 
+            query = query.Where(x => x.InvoiceRequisites != null &&
                                      x.InvoiceRequisites.InvoiceNumber.Contains(dto.InvoiceNo));
-        
+
         if (!string.IsNullOrEmpty(dto.PinCode))
             query = query.Where(x => x.PinCode.Contains(dto.PinCode));
 
@@ -63,25 +61,25 @@ public class InvoiceService : IInvoiceService
             query = query.Where(x => x.InvoiceRequisites != null &&
                                      x.InvoiceRequisites.InvoiceDate == dto.InvoiceDate.Date);
 
-        if (dto.SubjectType != ESubjectTypeDto.None) 
+        if (dto.SubjectType != ESubjectType.None)
         {
             switch (dto.SubjectType)
             {
-                case ESubjectTypeDto.Exporter:
-                    query = query.Where(x => x.Exporter != null && x.Exporter.Status == EExporterStatus.Exporter); 
+                case ESubjectType.Exporter:
+                    query = query.Where(x => x.Exporter != null && x.Exporter.Status == EExporterStatus.Exporter);
                     break;
 
-                case ESubjectTypeDto.Importer:
-                    query = query.Where(x => x.Importer != null && x.Importer.Status == EImporterStatus.Importer); 
+                case ESubjectType.Importer:
+                    query = query.Where(x => x.Importer != null && x.Importer.Status == EImporterStatus.Importer);
                     break;
 
-                case ESubjectTypeDto.Sender:
+                case ESubjectType.Sender:
                     var senderInvoiceIds = _unitOfWork.Repository<Exporter>().GetAll(x => x.Status == EExporterStatus.Sender)
                                                                              .Select(x => x.InvoiceId);
-                    query = query.Where(x => x.Exporter != null && x.Exporter.Status == EExporterStatus.Sender);   
+                    query = query.Where(x => x.Exporter != null && x.Exporter.Status == EExporterStatus.Sender);
                     break;
 
-                case ESubjectTypeDto.Recipient:
+                case ESubjectType.Recipient:
                     var recipientInvoiceIds = _unitOfWork.Repository<Importer>().GetAll(x => x.Status == EImporterStatus.Recipient)
                                                                                 .Select(x => x.InvoiceId);
                     query = query.Where(x => x.Importer != null && x.Importer.Status == EImporterStatus.Recipient);
@@ -92,56 +90,57 @@ public class InvoiceService : IInvoiceService
             }
         }
 
-        if (!string.IsNullOrWhiteSpace(dto.Voen) && dto.SubjectType != ESubjectTypeDto.None)
+        if (!string.IsNullOrWhiteSpace(dto.Voen) && dto.SubjectType != ESubjectType.None)
         {
             switch (dto.SubjectType)
             {
-                case ESubjectTypeDto.Exporter:
+                case ESubjectType.Exporter:
                     query = query.Where(x => x.Exporter.Voen.Contains(dto.Voen));
                     break;
 
-                case ESubjectTypeDto.Importer:
+                case ESubjectType.Importer:
                     query = query.Where(x => x.Importer.Voen.Contains(dto.Voen));
                     break;
 
-                case ESubjectTypeDto.Sender:
+                case ESubjectType.Sender:
                     var senderIds = _unitOfWork.Repository<Exporter>().GetAll(x => x.Status == EExporterStatus.Sender && x.Voen.Contains(dto.Voen))
                                                                              .Select(x => x.InvoiceId);
                     query = query.Where(x => senderIds.Contains(x.Id));
                     break;
 
-                case ESubjectTypeDto.Recipient:
+                case ESubjectType.Recipient:
                     var recipientIds = _unitOfWork.Repository<Importer>().GetAll(x => x.Status == EImporterStatus.Recipient && x.Voen.Contains(dto.Voen))
                                                                          .Select(x => x.InvoiceId);
                     query = query.Where(x => recipientIds.Contains(x.Id));
-                    break;  
+                    break;
             }
         }
 
-        if (!string.IsNullOrWhiteSpace(dto.Name) && dto.SubjectType != ESubjectTypeDto.None)
+        if (!string.IsNullOrWhiteSpace(dto.Name) && dto.SubjectType != ESubjectType.None)
         {
             switch (dto.SubjectType)
             {
-                case ESubjectTypeDto.Exporter:
+
+                case ESubjectType.Exporter:
                     query = query.Where(x => x.Exporter.Name.Contains(dto.Name));
                     break;
 
-                case ESubjectTypeDto.Importer:
+                case ESubjectType.Importer:
                     query = query.Where(x => x.Importer.Name.Contains(dto.Name));
                     break;
 
-                case ESubjectTypeDto.Sender:
+                case ESubjectType.Sender:
                     var senderIds = _unitOfWork.Repository<Exporter>().GetAll(x => x.Status == EExporterStatus.Sender && x.Name.Contains(dto.Name))
                                                                       .Select(x => x.InvoiceId);
                     query = query.Where(x => senderIds.Contains(x.Id));
                     break;
-                    
 
-                case ESubjectTypeDto.Recipient:
+
+                case ESubjectType.Recipient:
                     var recipientIds = _unitOfWork.Repository<Importer>().GetAll(x => x.Status == EImporterStatus.Recipient && x.Name.Contains(dto.Name))
                                                                          .Select(x => x.InvoiceId);
                     query = query.Where(x => recipientIds.Contains(x.Id));
-                    break;  
+                    break;
             }
         }
 
@@ -153,19 +152,28 @@ public class InvoiceService : IInvoiceService
         {
             PinCode = invoice.PinCode,
             CreateTime = invoice.CreateTime,
-            InvoiceNumber = invoice.InvoiceRequisites.InvoiceNumber,                                 
-            InvoiceDate = invoice.InvoiceRequisites.InvoiceDate,                                     
-            ExporterName = invoice.Exporter.Name,                                                    
-            ImporterName = invoice.Importer.Name,                                                    
-            GoodsCount = invoice.Goods.Count().ToString(),                                          
-            TotalAmount = invoice.Goods.Sum(g => g.TotalAmount).ToString(),                          
-            Status = invoice.Status,                                                                
+            InvoiceNumber = invoice.InvoiceRequisites.InvoiceNumber,
+            InvoiceDate = invoice.InvoiceRequisites.InvoiceDate,
+            ExporterName = invoice.Exporter.Name,
+            ImporterName = invoice.Importer.Name,
+            GoodsCount = invoice.Goods.Count().ToString(),
+            TotalAmount = invoice.Goods.Sum(g => g.TotalAmount).ToString(),
+            Status = invoice.Status,
             FieldValues = invoice.InvoiceFieldValues?.Select(fv => new InvoiceFieldValueResponseDTO
             {
                 InvoiceFieldDefinitionId = fv.InvoiceFieldDefinitionId,
-                FieldDefinitionName = fv.InvoiceFieldDefinition?.Label ?? string.Empty,         
-                Value = fv.Value ?? string.Empty                                                
-            }).ToList() ?? new List<InvoiceFieldValueResponseDTO>()
+                FieldDefinitionName = fv.InvoiceFieldDefinition?.Label ?? string.Empty,
+                Value = fv.Value ?? string.Empty
+            }).ToList() ?? new List<InvoiceFieldValueResponseDTO>(),
+            UpdateHistories = invoice.UpdateHistories.Select(uh => new InvoiceUpdateResponseDTO
+            {
+                Id = uh.Id,
+                Order = uh.Order,
+                UpdateTime = uh.UpdateTime,
+                PinCode = uh.PinCode,
+                StatusUpdate = uh.StatusUpdate,
+                Note = uh.Note
+            }).ToList() ?? new List<InvoiceUpdateResponseDTO>()
         }).ToList();
 
         return new PagedResult<InvoiceResponseDTO>
@@ -181,7 +189,7 @@ public class InvoiceService : IInvoiceService
     // Admin Operations
     public async Task CreateAsync(InvoiceCreateRequestDTO dto, CancellationToken cancellationToken = default)
     {
-        if (dto == null) 
+        if (dto == null)
             throw new ArgumentNullException(nameof(dto));
 
         var filePath = await _fileService.UploadFileAsync(dto.File, cancellationToken);
@@ -198,7 +206,7 @@ public class InvoiceService : IInvoiceService
             ContractNumberAndDate = dto.InvoiceRequisites.ContractNumberAndDate ?? string.Empty,
             TransportConditions = dto.InvoiceRequisites.TransportConditions,
             InvoicePurpose = dto.InvoiceRequisites.InvoicePurpose,
-            PaymentConditions = dto.InvoiceRequisites.PaymentConditions
+            PaymentConditions = dto.InvoiceRequisites.PaymentConditions,
         };
 
 
@@ -214,7 +222,7 @@ public class InvoiceService : IInvoiceService
                 City = dto.Exporter.Address.City,
                 Country = dto.Exporter.Address.Country
             },
-             Status = EExporterStatus.Exporter
+            Status = EExporterStatus.Exporter
         };
 
         if (dto.Exporter.IsExporterDifferentFromSender)
@@ -231,7 +239,7 @@ public class InvoiceService : IInvoiceService
                     City = dto.Exporter.Address.City,
                     Country = dto.Exporter.Address.Country
                 },
-                Status = EExporterStatus.Sender  
+                Status = EExporterStatus.Sender
             };
         }
 
@@ -250,7 +258,7 @@ public class InvoiceService : IInvoiceService
             },
             Status = EImporterStatus.Importer
         };
-     
+
         if (dto.Importer.IsImporterDifferentFromRecipient)
         {
             var recipient = new Importer
@@ -292,7 +300,8 @@ public class InvoiceService : IInvoiceService
             CircumstancesAffectingInvoice = circumstancesAffectingInvoice ?? null,
             Status = EInvoiceStatus.Pending,
             PinCode = dto.PinCode,
-            FilePathUrl = filePath
+            FilePathUrl = filePath,
+            UpdateTime = null,
         };
 
         _unitOfWork.Repository<Invoice>().Create(invoice);
@@ -335,7 +344,19 @@ public class InvoiceService : IInvoiceService
         if (dto == null)
             throw new ArgumentNullException(nameof(dto));
 
-        var invoice = await _unitOfWork.Repository<Invoice>().GetByIdAsync(id, cancellationToken);
+
+
+        var invoice = await _unitOfWork.Repository<Invoice>().GetAsync(i => i.Id == id, includes: i => i.Include(i => i.Importer)
+                                                                                                        .Include(i => i.Exporter)
+                                                                                                        .Include(i => i.InvoiceRequisites)
+                                                                                                        .Include(i => i.CircumstancesAffectingInvoice)
+                                                                                                        .Include(i => i.Goods)
+                                                                                                        .Include(i => i.InvoiceFieldValues)
+                                                                                                        .Include(i => i.UpdateHistories));
+
+
+        if (invoice.Status == EInvoiceStatus.Agreed)
+            throw new Exception($"The Invoice with Status Agreed can not be change. Id:{id}");
 
         if (invoice == null)
             throw new KeyNotFoundException($"Invoice with id {id} not found.");
@@ -474,50 +495,21 @@ public class InvoiceService : IInvoiceService
         }
 
         invoice.UpdateTime = DateTime.UtcNow;
-        _unitOfWork.Repository<Invoice>().Update(invoice);
-        await _unitOfWork.SaveChangesAsync(cancellationToken);
-    }
 
-
-    public async Task<InvoiceUpdateResponseDTO> UpdateResponseAsync(Guid id, CancellationToken cancellationToken = default)
-    {
-        var invoice = await _unitOfWork.Repository<Invoice>().GetByIdAsync(id, cancellationToken);
-
-        if (invoice == null)
-            throw new KeyNotFoundException($"Invoice with id {id} not found.");
-
-        var historyQuery = _unitOfWork.Repository<InvoiceUpdateHistory>()
-            .GetAll(x => x.InvoiceId == id);
-
-        var lastOrder = historyQuery.Any() ? historyQuery.Max(x => x.Order) : 0;
-
-        var newOrder = lastOrder + 1;
-
-        invoice.UpdateTime = DateTime.UtcNow;
-
-        var updateHistory = new InvoiceUpdateHistory
+        InvoiceUpdateHistory updateHistory = new InvoiceUpdateHistory()
         {
-            InvoiceId = invoice.Id,
-            Order = newOrder,
+            Order = invoice.UpdateHistories.Count + 1,
+            PinCode = dto.PinCode,
             UpdateTime = invoice.UpdateTime,
-            PinCode = invoice.PinCode,
             StatusUpdate = EUpdateStatus.HasBeenCorrected,
-            Note = invoice.InvoiceRequisites?.Note ?? string.Empty
+            Note = string.Empty,
+            InvoiceId = invoice.Id
         };
 
-        _unitOfWork.Repository<Invoice>().Update(invoice);
         _unitOfWork.Repository<InvoiceUpdateHistory>().Create(updateHistory);
 
+        _unitOfWork.Repository<Invoice>().Update(invoice);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-
-        return new InvoiceUpdateResponseDTO
-        {
-            Order = newOrder,
-            UpdateTime = updateHistory.UpdateTime,
-            PinCode = updateHistory.PinCode,
-            StatusUpdate = updateHistory.StatusUpdate,
-            Note = updateHistory.Note
-        };
     }
 
 
@@ -528,13 +520,14 @@ public class InvoiceService : IInvoiceService
                                                                                              .Include(invoice => invoice.InvoiceRequisites)
                                                                                              .Include(invoice => invoice.CircumstancesAffectingInvoice)
                                                                                              .Include(invoice => invoice.Goods)
+                                                                                             .Include(invoice => invoice.UpdateHistories)
                                                                                              .Include(invoice => invoice.InvoiceFieldValues)
-                                                                                             .ThenInclude(fv => fv.InvoiceFieldDefinition));
+                                                                                             .ThenInclude(invoice => invoice.InvoiceFieldDefinition));
 
         if (dto is null)
             throw new ArgumentNullException(nameof(dto));
 
-        if (dto.CreatedFrom.HasValue) 
+        if (dto.CreatedFrom.HasValue)
             query = query.Where(x => x.CreateTime >= dto.CreatedFrom.Value);
 
         if (dto.CreatedTo.HasValue)
@@ -555,26 +548,26 @@ public class InvoiceService : IInvoiceService
             query = query.Where(x => x.InvoiceRequisites != null &&
                                      x.InvoiceRequisites.InvoiceDate == dto.InvoiceDate.Date);
 
-        if (dto.SubjectType != ESubjectTypeDto.None)
+        if (dto.SubjectType != ESubjectType.None)
         {
             switch (dto.SubjectType)
             {
-                case ESubjectTypeDto.Exporter:
+                case ESubjectType.Exporter:
                     query = query.Where(x => x.Exporter != null && x.Exporter.Status == EExporterStatus.Exporter);
                     break;
 
-                case ESubjectTypeDto.Importer:
+                case ESubjectType.Importer:
                     query = query.Where(x => x.Importer != null && x.Importer.Status == EImporterStatus.Importer);
                     break;
 
-                case ESubjectTypeDto.Sender:
+                case ESubjectType.Sender:
                     var senderInvoiceIds = _unitOfWork.Repository<Exporter>().GetAll(x => x.Status == EExporterStatus.Sender)
                                                                              .Select(x => x.InvoiceId);
 
                     query = query.Where(x => senderInvoiceIds.Contains(x.Id));
                     break;
 
-                case ESubjectTypeDto.Recipient:
+                case ESubjectType.Recipient:
                     var recipientInvoiceIds = _unitOfWork.Repository<Importer>().GetAll(x => x.Status == EImporterStatus.Recipient)
                                                                                 .Select(x => x.InvoiceId);
 
@@ -586,19 +579,19 @@ public class InvoiceService : IInvoiceService
             }
         }
 
-        if (!string.IsNullOrWhiteSpace(dto.Voen) && dto.SubjectType != ESubjectTypeDto.None)
+        if (!string.IsNullOrWhiteSpace(dto.Voen) && dto.SubjectType != ESubjectType.None)
         {
             switch (dto.SubjectType)
             {
-                case ESubjectTypeDto.Exporter:
+                case ESubjectType.Exporter:
                     query = query.Where(x => x.Exporter.Voen.Contains(dto.Voen));
                     break;
 
-                case ESubjectTypeDto.Importer:
+                case ESubjectType.Importer:
                     query = query.Where(x => x.Importer.Voen.Contains(dto.Voen));
                     break;
 
-                case ESubjectTypeDto.Sender:
+                case ESubjectType.Sender:
                     {
                         var senderInvoiceIds = _unitOfWork.Repository<Exporter>()
                             .GetAll(x => x.Status == EExporterStatus.Sender && x.Voen.Contains(dto.Voen))
@@ -608,7 +601,7 @@ public class InvoiceService : IInvoiceService
                         break;
                     }
 
-                case ESubjectTypeDto.Recipient:
+                case ESubjectType.Recipient:
                     {
                         var recipientInvoiceIds = _unitOfWork.Repository<Importer>()
                             .GetAll(x => x.Status == EImporterStatus.Recipient && x.Voen.Contains(dto.Voen))
@@ -620,19 +613,19 @@ public class InvoiceService : IInvoiceService
             }
         }
 
-        if (!string.IsNullOrWhiteSpace(dto.Name) && dto.SubjectType != ESubjectTypeDto.None)
+        if (!string.IsNullOrWhiteSpace(dto.Name) && dto.SubjectType != ESubjectType.None)
         {
             switch (dto.SubjectType)
             {
-                case ESubjectTypeDto.Exporter:
+                case ESubjectType.Exporter:
                     query = query.Where(x => x.Exporter.Name.Contains(dto.Name));
                     break;
 
-                case ESubjectTypeDto.Importer:
+                case ESubjectType.Importer:
                     query = query.Where(x => x.Importer.Name.Contains(dto.Name));
                     break;
 
-                case ESubjectTypeDto.Sender:
+                case ESubjectType.Sender:
                     {
                         var senderInvoiceIds = _unitOfWork.Repository<Exporter>()
                             .GetAll(x => x.Status == EExporterStatus.Sender && x.Name.Contains(dto.Name))
@@ -642,7 +635,7 @@ public class InvoiceService : IInvoiceService
                         break;
                     }
 
-                case ESubjectTypeDto.Recipient:
+                case ESubjectType.Recipient:
                     {
                         var recipientInvoiceIds = _unitOfWork.Repository<Importer>()
                             .GetAll(x => x.Status == EImporterStatus.Recipient && x.Name.Contains(dto.Name))
@@ -741,12 +734,14 @@ public class InvoiceService : IInvoiceService
 
                 Goods = invoice.Goods.Select(g => new GoodAdminResponseDto
                 {
+                    Id = g.Id,
                     GoodCode = g.GoodCode,
                     Price = g.Price,
                     Quantity = g.Quantity,
                     TotalAmount = g.TotalAmount,
                     IsDeleted = g.IsDeleted,
-                    DeleteTime = g.DeletedTime
+                    DeleteTime = g.DeletedTime,
+                    InvoiceId = g.InvoiceId,
                 }).ToList(),
 
                 FieldValues = invoice.InvoiceFieldValues.Select(fv => new InvoiceFieldValueResponseDTO
@@ -755,6 +750,16 @@ public class InvoiceService : IInvoiceService
                     FieldDefinitionName = fv.InvoiceFieldDefinition?.Label ?? string.Empty,
                     Value = fv.Value ?? string.Empty
                 }).ToList(),
+
+                UpdateHistories = invoice.UpdateHistories.Select(uh => new InvoiceUpdateResponseDTO
+                {
+                    Id = uh.Id,
+                    Order = uh.Order,
+                    UpdateTime = uh.UpdateTime,
+                    PinCode = uh.PinCode,
+                    StatusUpdate = uh.StatusUpdate,
+                    Note = uh.Note
+                }).ToList() ?? new List<InvoiceUpdateResponseDTO>(),
 
                 CreateTime = invoice.CreateTime,
                 UpdateTime = invoice.UpdateTime,
@@ -777,15 +782,15 @@ public class InvoiceService : IInvoiceService
     public async Task<InvoiceAdminResponseDTO> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var invoice = await _unitOfWork.Repository<Invoice>().GetAsync(x => x.Id == id, includes: q => q.Include(invoice => invoice.Importer)
-                                                                                            .Include(invoice => invoice.Exporter)
-                                                                                            .Include(invoice => invoice.InvoiceRequisites)
-                                                                                            .Include(invoice => invoice.CircumstancesAffectingInvoice)
-                                                                                            .Include(invoice => invoice.Goods)
-                                                                                            .Include(invoice => invoice.InvoiceFieldValues)
-                                                                                            .ThenInclude(fv => fv.InvoiceFieldDefinition));
+                                                                                                        .Include(invoice => invoice.Exporter)
+                                                                                                        .Include(invoice => invoice.InvoiceRequisites)
+                                                                                                        .Include(invoice => invoice.CircumstancesAffectingInvoice)
+                                                                                                        .Include(invoice => invoice.Goods)
+                                                                                                        .Include(invoice => invoice.InvoiceFieldValues)
+                                                                                                        .ThenInclude(fv => fv.InvoiceFieldDefinition));
         if (invoice is null)
             throw new KeyNotFoundException($"Invoice with id {id} not found.");
-        
+
         var sender = await _unitOfWork.Repository<Exporter>().GetAsync(x => x.InvoiceId == id && x.Status == EExporterStatus.Sender,
                                                                        tracking: false,
                                                                        cancellationToken: cancellationToken);
@@ -845,7 +850,7 @@ public class InvoiceService : IInvoiceService
             TransportConditions = invoice.InvoiceRequisites.TransportConditions,
             InvoicePurpose = invoice.InvoiceRequisites.InvoicePurpose,
             PaymentConditions = invoice.InvoiceRequisites.PaymentConditions,
-     
+
             // CircumstancesAffectingInvoice məlumatları
             DegreeInfluenceInvoice = invoice.CircumstancesAffectingInvoice?.DegreeInfluenceInvoice ?? EDegreeInfluenceInvoice.None,
             TypeFunds = invoice.CircumstancesAffectingInvoice?.TypeFunds ?? ETypeFunds.None,
@@ -858,12 +863,14 @@ public class InvoiceService : IInvoiceService
             // Goods məlumatları
             Goods = invoice.Goods?.Select(g => new GoodAdminResponseDto
             {
+                Id = g.Id,
                 GoodCode = g.GoodCode,
                 Price = g.Price,
                 Quantity = g.Quantity,
                 TotalAmount = g.TotalAmount,
                 IsDeleted = g.IsDeleted,
-                DeleteTime = g.DeletedTime ?? default
+                DeleteTime = g.DeletedTime,
+                InvoiceId = g.InvoiceId,
             }).ToList() ?? new List<GoodAdminResponseDto>(),
 
             // InvoiceFieldValues məlumatları
@@ -874,7 +881,6 @@ public class InvoiceService : IInvoiceService
                 Value = fv.Value ?? string.Empty
             }).ToList() ?? new List<InvoiceFieldValueResponseDTO>(),
 
-            // UpdateTime, CreateTime və digər məlumatlar
             CreateTime = invoice.CreateTime,
             UpdateTime = invoice.UpdateTime,
             DeleteTime = invoice.DeletedTime,
@@ -937,6 +943,7 @@ public class InvoiceService : IInvoiceService
         {
             invoice.IsDeleted = true;
             invoice.IsActive = false;
+            invoice.UpdateTime = DateTime.UtcNow;
             invoice.DeletedTime = DateTime.UtcNow;
         }
         await _unitOfWork.SaveChangesAsync(cancellationToken);
@@ -954,6 +961,7 @@ public class InvoiceService : IInvoiceService
         {
             invoice.IsDeleted = false;
             invoice.DeletedTime = null;
+            invoice.UpdateTime = DateTime.UtcNow;
         }
         else
         {

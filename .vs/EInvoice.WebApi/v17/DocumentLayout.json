@@ -5,26 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.business\\services\\internal\\implements\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|solutionrelative:einvoice.business\\services\\internal\\implements\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.business\\dtos\\invoicedto\\invoicecreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3539B7C-B2A6-4375-AFA0-55A38B2BEBE4}|EInvoice.Business\\EInvoice.Business.csproj|solutionrelative:einvoice.business\\dtos\\invoicedto\\invoicecreaterequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAECD696-E4E7-4832-A01B-EED0B66E298E}|EInvoice.Domain\\EInvoice.Domain.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.domain\\models\\exporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAECD696-E4E7-4832-A01B-EED0B66E298E}|EInvoice.Domain\\EInvoice.Domain.csproj|solutionrelative:einvoice.domain\\models\\exporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4214794-EFB3-4FB0-ADE4-849C60E1659A}|EInvoice.WebApi\\EInvoice.WebApi.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.webapi\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4214794-EFB3-4FB0-ADE4-849C60E1659A}|EInvoice.WebApi\\EInvoice.WebApi.csproj|solutionrelative:einvoice.webapi\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAECD696-E4E7-4832-A01B-EED0B66E298E}|EInvoice.Domain\\EInvoice.Domain.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.domain\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAECD696-E4E7-4832-A01B-EED0B66E298E}|EInvoice.Domain\\EInvoice.Domain.csproj|solutionrelative:einvoice.domain\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DF3A3EE-5E6A-4E17-B14B-9B9C2D25491B}|EInvoice.DAL\\EInvoice.DAL.csproj|c:\\users\\asus\\desktop\\einvoice\\einvoice.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DF3A3EE-5E6A-4E17-B14B-9B9C2D25491B}|EInvoice.DAL\\EInvoice.DAL.csproj|solutionrelative:einvoice.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,87 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 322,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Exporter.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Domain\\Models\\Exporter.cs",
-              "RelativeDocumentMoniker": "EInvoice.Domain\\Models\\Exporter.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Domain\\Models\\Exporter.cs*",
-              "RelativeToolTip": "EInvoice.Domain\\Models\\Exporter.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T13:24:21.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InvoiceController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.WebApi\\Controllers\\InvoiceController.cs",
-              "RelativeDocumentMoniker": "EInvoice.WebApi\\Controllers\\InvoiceController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.WebApi\\Controllers\\InvoiceController.cs",
-              "RelativeToolTip": "EInvoice.WebApi\\Controllers\\InvoiceController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAUwE0AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T12:07:56.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InvoiceCreateRequestDTO.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\DTOs\\InvoiceDTO\\InvoiceCreateRequestDTO.cs",
-              "RelativeDocumentMoniker": "EInvoice.Business\\DTOs\\InvoiceDTO\\InvoiceCreateRequestDTO.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\DTOs\\InvoiceDTO\\InvoiceCreateRequestDTO.cs*",
-              "RelativeToolTip": "EInvoice.Business\\DTOs\\InvoiceDTO\\InvoiceCreateRequestDTO.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T12:25:43.912Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.DAL\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "EInvoice.DAL\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.DAL\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "EInvoice.DAL\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T08:42:25.793Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "InvoiceService.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
               "RelativeDocumentMoniker": "EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs*",
-              "RelativeToolTip": "EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs*",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAgwAoBAAAOAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
+              "RelativeToolTip": "EInvoice.Business\\Services\\Internal\\Implements\\InvoiceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T05:33:47.427Z",
+              "WhenOpened": "2026-03-16T08:41:22.376Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Invoice.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Domain\\Models\\Invoice.cs",
-              "RelativeDocumentMoniker": "EInvoice.Domain\\Models\\Invoice.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\EInvoice\\EInvoice.Domain\\Models\\Invoice.cs",
-              "RelativeToolTip": "EInvoice.Domain\\Models\\Invoice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-13T08:47:34.413Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         },
@@ -124,15 +41,15 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         },

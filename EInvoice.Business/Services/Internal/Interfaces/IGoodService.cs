@@ -1,6 +1,5 @@
 ﻿using EInvoice.Business.DTOs.CommonDTO;
 using EInvoice.Business.DTOs.GoodDTO;
-
 namespace EInvoice.Business.Services.Internal.Interfaces;
 
 public interface IGoodService
@@ -18,7 +17,4 @@ public interface IGoodService
     Task RecoverAsync(Guid id, CancellationToken cancellationToken = default);
     Task ActiceAsync(Guid id, CancellationToken cancellationToken = default);
     Task DeActiveAsync(Guid id, CancellationToken cancellationToken = default);
-
-    // Export Method
-    // Import Method
 }

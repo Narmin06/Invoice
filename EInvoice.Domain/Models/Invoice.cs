@@ -4,8 +4,6 @@ namespace EInvoice.Domain.Models;
 
 public class Invoice : AuditableEntity, ISoftDeletable
 {
-    //public ICollection<Exporter> Exporters { get; set; } = new List<Exporter>();
-    //public ICollection<Importer> Importers { get; set; } = new List<Importer>();
     public Importer Importer { get; set; } = null!;
     public Exporter Exporter { get; set; } = null!;
     public InvoiceRequisites InvoiceRequisites { get; set; } = null!;

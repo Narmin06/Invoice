@@ -5,25 +5,22 @@ using EInvoice.Business.Services.Internal.Interfaces;
 using EInvoice.DAL.Data;
 using EInvoice.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata;
-using System.Xml.Linq;
-
 namespace EInvoice.Business.Services.Internal.Implements;
 
 public class GoodService : IGoodService
 {
     private readonly IUnitOfWork _unitOfWork;
-
     public GoodService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
 
+
     // Public Operations
     public async Task<IEnumerable<GoodResponseDto>> GetAllPublicAsync(CancellationToken cancellationToken = default)
     {
         IQueryable<Good> query = _unitOfWork.Repository<Good>().GetAll(includes: x => x.Include(good => good.Invoice))
-            .Where(good => !good.IsDeleted && good.Invoice != null && !good.Invoice.IsDeleted);
+                                                               .Where(good => !good.IsDeleted && good.Invoice != null && good.IsActive);
 
         return await query.Select(good => new GoodResponseDto
         {
@@ -54,7 +51,7 @@ public class GoodService : IGoodService
         var invoice = await _unitOfWork.Repository<Invoice>().GetByIdAsync(goodDto.InvoiceId, cancellationToken);
         if (invoice != null)
         {
-            invoice.Goods.Add(good);  //Invoice-deki Goods siyahısına add
+            invoice.Goods.Add(good);        //Invoice-deki Goods siyahısına add
         }
 
         _unitOfWork.Repository<Good>().Create(good);

@@ -11,6 +11,4 @@ public class Importer : BaseEntity
     public Guid InvoiceId { get; set; }
 
     public EImporterStatus Status { get; set; }
-
-    // Importer Dtodaki IsImporterDifferentFromRecipient == true olarsa Yuxaridaki entitilerden elave olaraq yene eyni entitilerden ibaret xanalar doldurulmalidir. Eks halda her iki datalar beraber olur.yeniden doldurmaga ehtiyac yoxdur.
 }

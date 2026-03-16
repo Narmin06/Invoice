@@ -58,6 +58,7 @@ public class InvoiceAdminResponseDTO : AuditableEntityDto, ISoftDeletableDto
     public string FileUrl { get; set; } = string.Empty;
     public IEnumerable<GoodAdminResponseDto> Goods { get; set; } = new List<GoodAdminResponseDto>();
     public IEnumerable<InvoiceFieldValueResponseDTO> FieldValues { get; set; } = new List<InvoiceFieldValueResponseDTO>();
+    public IEnumerable<InvoiceUpdateResponseDTO> UpdateHistories { get; set; } = new List<InvoiceUpdateResponseDTO>();
 
     public DateTime? DeleteTime { get; set; }
     public bool IsDeleted { get; set; }        

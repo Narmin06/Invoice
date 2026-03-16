@@ -2,7 +2,7 @@
 
 public enum EPaymentConditions
 {
-    // Buy Payment 
+                            // BUY 
     Payment100 = 100,       // Malın dəyəri əvvəlcədən ödənilmişdir
     Payment110 = 110,       // Malın dəyərinin bir hissəsi əvvəlcədən ödənilmişdir
     Payment120 = 120,       // Malın dəyəri idxaldan sonra ödəniləcək
@@ -12,7 +12,7 @@ public enum EPaymentConditions
     Payment210 = 210,       // Malın dəyərinin bir hissəsi xarici kredit hesabına ödənilmişdir
     Payment220 = 220,       // Konsiqnasiya şərti ilə idxal olunmuş mal
 
-    // Sell Payment 
+                            // SELL
     Payment001 = 1,         // Malın dəyəri əvvəlcədən ödənilmişdir (ixracatçının hesabına)
     Payment002 = 2,         // Mal ixrac olunduqdan sonra ödənilmişdir
     Payment003 = 3,         // Konsiqnasiya yolu ilə mal ixracı zamanı ödənilmişdir

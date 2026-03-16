@@ -9,7 +9,6 @@ namespace EInvoice.Business.Services.Internal.Implements;
 public class InvoiceFieldDefinitionService : IInvoiceFieldDefinitionService
 {
     private readonly IUnitOfWork _unitOfWork;
-
     public InvoiceFieldDefinitionService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
@@ -25,8 +24,8 @@ public class InvoiceFieldDefinitionService : IInvoiceFieldDefinitionService
         IQueryable<InvoiceFieldDefinition> query = _unitOfWork.Repository<InvoiceFieldDefinition>().GetAll().Where(x => x.IsDeleted == false);
 
 
-        if (!string.IsNullOrEmpty(dto.Search))
-            query = query.Where(x => x.Label.Contains(dto.Search));
+        //if (!string.IsNullOrEmpty(dto.Search))
+        //    query = query.Where(x => x.Label.Contains(dto.Search));
 
         int pageNumber = dto.PageNumber <= 0 ? 1 : dto.PageNumber;
         int pageSize = dto.PageSize <= 0 ? 10 : dto.PageSize;
@@ -89,8 +88,8 @@ public class InvoiceFieldDefinitionService : IInvoiceFieldDefinitionService
         if (dto is null)
             throw new ArgumentNullException(nameof(dto));
 
-        if (!string.IsNullOrEmpty(dto.Search))
-            query = query.Where(x => x.Label.Contains(dto.Search));
+        //if (!string.IsNullOrEmpty(dto.Search))
+        //    query = query.Where(x => x.Label.Contains(dto.Search));
 
         int pageNumber = dto.PageNumber <= 0 ? 1 : dto.PageNumber;
         int pageSize = dto.PageSize <= 0 ? 10 : dto.PageSize;
@@ -114,6 +113,7 @@ public class InvoiceFieldDefinitionService : IInvoiceFieldDefinitionService
             TotalCount = dtoItems.Count,
         };
     }
+
 
     public async Task<InvoiceFieldDefinitionResponseDto> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {

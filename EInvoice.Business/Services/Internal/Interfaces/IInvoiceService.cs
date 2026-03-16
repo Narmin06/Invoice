@@ -1,7 +1,6 @@
 ﻿using EInvoice.Business.DTOs.CommonDTO;
 using EInvoice.Business.DTOs.InvoiceDTO;
 using EInvoice.Business.DTOs.InvoiceDTOl;
-
 namespace EInvoice.Business.Services.Internal.Interfaces;
 
 public interface IInvoiceService
@@ -12,7 +11,6 @@ public interface IInvoiceService
     // Admin Operations
     Task CreateAsync(InvoiceCreateRequestDTO dto, CancellationToken cancellationToken = default!);
     Task UpdateAsync(Guid id, InvoiceUpdateRequestDTO dto, CancellationToken cancellationToken = default!);
-    Task<InvoiceUpdateResponseDTO> UpdateResponseAsync(Guid id, CancellationToken cancellationToken = default!);
     Task<PagedResult<InvoiceAdminResponseDTO>> GetAllAsync(InvoiceQueryDTO dto, CancellationToken cancellationToken = default!);
     Task<InvoiceAdminResponseDTO> GetByIdAsync(Guid id, CancellationToken cancellationToken = default!);
     Task ChangeStatusAsync(Guid id, CancellationToken cancellationToken = default!);

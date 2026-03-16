@@ -3,7 +3,7 @@ namespace EInvoice.Business.DTOs.InvoiceRequisites;
 
 public class InvoiceRequisitesDto
 {
-    public required string InvoiceNumber { get; set; } = "Nomresiz";
+    public required string InvoiceNumber { get; set; } = "N-siz";
     public required DateTime InvoiceDate { get; set; }
     public required ECurrency CurrencyCode { get; set; }
     public string? ShortDeclarationNumber { get; set; }

@@ -395,77 +395,6 @@
   },
   {
     "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
-    "Method": "GetAllAsync",
-    "RelativePath": "api/Invoice",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "CreatedFrom",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "CreatedTo",
-        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "SubjectType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Voen",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "InvoiceNo",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "InvoiceDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "PinCode",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "NumberOfShortDeclaration",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageNumber",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Search",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
     "Method": "UpdateAsync",
     "RelativePath": "api/Invoice/{id}",
     "HttpMethod": "PUT",
@@ -476,6 +405,11 @@
         "Name": "id",
         "Type": "System.Guid",
         "IsRequired": true
+      },
+      {
+        "Name": "PinCode",
+        "Type": "System.String",
+        "IsRequired": false
       },
       {
         "Name": "Importer.Voen",
@@ -749,16 +683,66 @@
   },
   {
     "ContainingType": "EInvoice.WebApi.Controllers.InvoiceController",
-    "Method": "UpdateResponseAsync",
-    "RelativePath": "api/Invoice/{id}/update-response",
-    "HttpMethod": "POST",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/Invoice/admin",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
+        "Name": "CreatedFrom",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "CreatedTo",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "SubjectType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Voen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceNo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "InvoiceDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "PinCode",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumberOfShortDeclaration",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -824,11 +808,6 @@
       {
         "Name": "PageSize",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Search",
-        "Type": "System.String",
         "IsRequired": false
       }
     ],
@@ -920,11 +899,6 @@
         "Name": "PageSize",
         "Type": "System.Int32",
         "IsRequired": false
-      },
-      {
-        "Name": "Search",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -945,11 +919,6 @@
       {
         "Name": "PageSize",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Search",
-        "Type": "System.String",
         "IsRequired": false
       }
     ],

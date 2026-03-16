@@ -64,9 +64,10 @@ public class FileService(IWebHostEnvironment environment) : IFileService
     public Task<bool> FileExistsAsync(string fileUrlOrPath)
     {
         var fileName = Path.GetFileName(fileUrlOrPath);
-        var physicalPath = Path.Combine(_uploadFolder, fileName);  // Faylın tam yolunu birləşdirir : C:\Uploads\documents\file.pdf
-        return Task.FromResult(File.Exists(physicalPath));         //faylın sistemdə mövcud olmasını yoxlayır
+        var physicalPath = Path.Combine(_uploadFolder, fileName);    // Faylın tam yolunu birləşdirir : C:\Uploads\documents\file.pdf
+        return Task.FromResult(File.Exists(physicalPath));           //faylın sistemdə mövcud olmasını yoxlayır
     }
+
 
 
 
@@ -82,7 +83,7 @@ public class FileService(IWebHostEnvironment environment) : IFileService
         if (file.Length > MaxFileSize)
             throw new InvalidOperationException($"File size limit exceeded. Max: {MaxFileSize / (1024 * 1024)}MB");
 
-        var ext = Path.GetExtension(file.FileName).ToLowerInvariant();  //faylın uzantısını alır
+        var ext = Path.GetExtension(file.FileName).ToLowerInvariant();      //faylın uzantısını alır
         if (!AllowedExtensions.Contains(ext))
             throw new InvalidOperationException("Only PDF files are accepted.");
 

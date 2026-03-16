@@ -3,11 +3,11 @@ using EInvoice.Business.DTOs.ExporterDTO;
 using EInvoice.Business.DTOs.InvoiceFieldValueDTO;
 using EInvoice.Business.DTOs.InvoiceRequisites;
 using Microsoft.AspNetCore.Http;
-
 namespace EInvoice.Business.DTOs.InvoiceDTO;
 
 public class InvoiceUpdateRequestDTO
 {
+    public string PinCode { get; set; } = string.Empty;
     public ImporterDto Importer { get; set; } = null!;
     public ExporterDto Exporter { get; set; } = null!;
     public InvoiceRequisitesDto InvoiceRequisites { get; set; } = null!;

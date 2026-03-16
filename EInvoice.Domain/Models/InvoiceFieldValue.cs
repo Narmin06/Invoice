@@ -10,5 +10,4 @@ public class InvoiceFieldValue : AuditableEntity
 
     public Guid InvoiceFieldDefinitionId { get; set; }
     public InvoiceFieldDefinition InvoiceFieldDefinition { get; set; } = null!;
-
 }

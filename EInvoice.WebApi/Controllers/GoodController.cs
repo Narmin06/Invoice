@@ -1,16 +1,13 @@
 ﻿using EInvoice.Business.DTOs.GoodDTO;
 using EInvoice.Business.Services.Internal.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-
 namespace EInvoice.WebApi.Controllers;
-
 
 [Route("api/[controller]")]
 [ApiController]
 public class GoodController : ControllerBase
 {
     private readonly IGoodService _goodService;
-
     public GoodController(IGoodService goodService)
     {
         _goodService = goodService;
@@ -53,6 +50,7 @@ public class GoodController : ControllerBase
         var result = await _goodService.GetAllAsync(cancellationToken);
         return Ok(result);
     }
+
 
     [HttpGet("moderator")]
     public async Task<IActionResult> GetAllPublicAsync(CancellationToken cancellationToken)
@@ -97,7 +95,7 @@ public class GoodController : ControllerBase
     {
         try
         {
-            await _goodService.RecoverAsync(id, cancellationToken);
+            await _goodService.RecoverAsync(id, cancellationToken); 
             return Ok(new { message = "Good recovered successfully." });
         }
         catch (Exception ex)
@@ -135,4 +133,35 @@ public class GoodController : ControllerBase
             return StatusCode(500, new { message = ex.Message });
         }
     }
+
+
+    //[HttpGet("export")]
+    //public async Task<IActionResult> ExportGoodsToExcelAsync(CancellationToken cancellationToken)
+    //{
+    //    try
+    //    {
+    //        var fileUrl = await _goodService.ExportGoodsToExcelAsync(cancellationToken);
+    //        return Ok(new { fileUrl });
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        return StatusCode(500, new { message = ex.Message });
+    //    }
+
+    //}
+
+
+    //[HttpPost("import")]
+    //public async Task<IActionResult> ImportGoodsFromExcelAsync([FromForm] IFormFile file, [FromQuery] bool deleteOldGoods, CancellationToken cancellationToken)
+    //{
+    //    try
+    //    {
+    //       await _goodService.ImportGoodsFromExcelAsync(file, deleteOldGoods, cancellationToken);
+    //        return Ok(new { message = "Goods imported successfully." });
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //     return StatusCode(500, new { message = ex.Message });
+    //    }
+    //}
 }
